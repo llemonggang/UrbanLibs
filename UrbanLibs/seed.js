@@ -207,5 +207,65 @@ var wordsArr = [
     word: 'hot mess',
     type: 'adjective'
   },
+//added verbs
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},
+{
+  word: '',
+  type: 'verb'
+},{
+  word: '',
+  type: 'verb'
+},
 
 ]
