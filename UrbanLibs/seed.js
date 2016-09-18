@@ -209,7 +209,7 @@ var wordsArr = [
   },
 //added verbs
 {
-  word: 'kill',
+  word: 'Kill',
   type: 'verb'
 },
 {
