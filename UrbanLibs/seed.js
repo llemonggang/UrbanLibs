@@ -209,183 +209,183 @@ var wordsArr = [
   },
 //added verbs
 {
-  word: '',
+  word: 'kill',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Burn',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Accelerate',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Identify',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Decide',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Receive',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Sell',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Walk',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Create',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Miss',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Poke',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Remember',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Express',
   type: 'verb'
 },
 {
-  word: '',
+  word: 'Captivate',
   type: 'verb'
 },{
-  word: '',
+  word: 'Advocate',
   type: 'verb'
 },
 // added noun
 {
-  word: '',
+  word: 'Lips',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Hand',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Fish',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Milk Shake',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Popsicle',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Chocolate',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Radio',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Texas',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Scooter',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Riely',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'We Work',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'General Assembly',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Austin',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Banana',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Helmet',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Karate',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Idiot',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Leash',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Shark',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Dinosaur',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Bubble Butt',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Taco',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Rotten egg',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Git hub',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Stinky socks',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Lipstick',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Mike',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'iPhone',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Refried bean',
   type: 'noun'
 },
 {
-  word: '',
+  word: 'Hot dog',
   type: 'noun'
 },
 
