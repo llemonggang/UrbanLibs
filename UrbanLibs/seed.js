@@ -9,7 +9,9 @@ var wordsArr = [
   {
     word: 'tasty',
     type: 'adjective'
+
   },
+  {
     word: 'coolio',
     type: 'adjective'
   },
