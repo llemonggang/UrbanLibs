@@ -267,5 +267,127 @@ var wordsArr = [
   word: '',
   type: 'verb'
 },
+// added noun
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+{
+  word: '',
+  type: 'noun'
+},
+
 
 ]
