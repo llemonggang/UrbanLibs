@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Sentence from './components/sentence';
+import View from './components/view';
 
 class App extends Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      sentence: ''
-    }
 
   }
 
@@ -17,7 +13,7 @@ class App extends Component {
 
     return (
       <div>
-      <Sentence />
+      <View />
       </div>
     );
   }
