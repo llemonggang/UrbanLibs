@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.4.3"
+    "babel-loader": "^6.2.5",
+    "react-scripts": "0.4.3",
+    "webpack": "^1.13.2"
   },
   "dependencies": {
     "react": "^15.3.1",

@@ -1,31 +1,34 @@
 import React, { Component } from 'react';
 
-import Words from './components/words';
+// import Words from './components/words';
 
 class Sentence extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      sentence: {}
+      sentence: 'String'
     }
   }
 
-  renderWords() {
-    //generate words
-  }
+  // renderWords() {
+  //   //generate words
+  // }
 
   renderSentence() {
     //generate random sentence
-    renderWords()
+    // renderWords()
   }
 
 
   render () {
-    <div>
-      <button onClick={this.renderSentence}></button>
 
-    </div>
+    return(
+      <div>
+        <button onClick={this.renderSentence}>Generate Sentence</button>
+      </div>
+  )
+
   }
 
 }
