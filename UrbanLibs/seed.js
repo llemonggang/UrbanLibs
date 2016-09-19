@@ -3,7 +3,7 @@ require('dotenv').config();
 var mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONNECTION);
 
-var Word = require('./modles/word');
+var Word = require('./models/word');
 
 var wordsArr = [
   {
