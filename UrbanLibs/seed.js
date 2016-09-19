@@ -9,7 +9,9 @@ var wordsArr = [
   {
     word: 'tasty',
     type: 'adjective'
+
   },
+  {
     word: 'coolio',
     type: 'adjective'
   },
@@ -205,5 +207,187 @@ var wordsArr = [
     word: 'hot mess',
     type: 'adjective'
   },
+//added verbs
+{
+  word: 'Kill',
+  type: 'verb'
+},
+{
+  word: 'Burn',
+  type: 'verb'
+},
+{
+  word: 'Accelerate',
+  type: 'verb'
+},
+{
+  word: 'Identify',
+  type: 'verb'
+},
+{
+  word: 'Decide',
+  type: 'verb'
+},
+{
+  word: 'Receive',
+  type: 'verb'
+},
+{
+  word: 'Sell',
+  type: 'verb'
+},
+{
+  word: 'Walk',
+  type: 'verb'
+},
+{
+  word: 'Create',
+  type: 'verb'
+},
+{
+  word: 'Miss',
+  type: 'verb'
+},
+{
+  word: 'Poke',
+  type: 'verb'
+},
+{
+  word: 'Remember',
+  type: 'verb'
+},
+{
+  word: 'Express',
+  type: 'verb'
+},
+{
+  word: 'Captivate',
+  type: 'verb'
+},{
+  word: 'Advocate',
+  type: 'verb'
+},
+// added noun
+{
+  word: 'Lips',
+  type: 'noun'
+},
+{
+  word: 'Hand',
+  type: 'noun'
+},
+{
+  word: 'Fish',
+  type: 'noun'
+},
+{
+  word: 'Milk Shake',
+  type: 'noun'
+},
+{
+  word: 'Popsicle',
+  type: 'noun'
+},
+{
+  word: 'Chocolate',
+  type: 'noun'
+},
+{
+  word: 'Radio',
+  type: 'noun'
+},
+{
+  word: 'Texas',
+  type: 'noun'
+},
+{
+  word: 'Scooter',
+  type: 'noun'
+},
+{
+  word: 'Riely',
+  type: 'noun'
+},
+{
+  word: 'We Work',
+  type: 'noun'
+},
+{
+  word: 'General Assembly',
+  type: 'noun'
+},
+{
+  word: 'Austin',
+  type: 'noun'
+},
+{
+  word: 'Banana',
+  type: 'noun'
+},
+{
+  word: 'Helmet',
+  type: 'noun'
+},
+{
+  word: 'Karate',
+  type: 'noun'
+},
+{
+  word: 'Idiot',
+  type: 'noun'
+},
+{
+  word: 'Leash',
+  type: 'noun'
+},
+{
+  word: 'Shark',
+  type: 'noun'
+},
+{
+  word: 'Dinosaur',
+  type: 'noun'
+},
+{
+  word: 'Bubble Butt',
+  type: 'noun'
+},
+{
+  word: 'Taco',
+  type: 'noun'
+},
+{
+  word: 'Rotten egg',
+  type: 'noun'
+},
+{
+  word: 'Git hub',
+  type: 'noun'
+},
+{
+  word: 'Stinky socks',
+  type: 'noun'
+},
+{
+  word: 'Lipstick',
+  type: 'noun'
+},
+{
+  word: 'Mike',
+  type: 'noun'
+},
+{
+  word: 'iPhone',
+  type: 'noun'
+},
+{
+  word: 'Refried bean',
+  type: 'noun'
+},
+{
+  word: 'Hot dog',
+  type: 'noun'
+},
+
 
 ]
