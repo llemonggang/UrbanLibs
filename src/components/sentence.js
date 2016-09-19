@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 // import Words from './components/words';
 
@@ -15,8 +16,13 @@ class Sentence extends Component {
   //   //generate words
   // }
 
-  renderSentence() {
-    //generate random sentence
+  renderSentence(sentence) {
+    console.log('working');
+    axios.get('http://localhost:3000/' + sentence._id).then((response) => {
+      this.setState ({
+        sentence: response.data
+      });
+    });
     // renderWords()
   }
 
