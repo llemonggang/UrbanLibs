@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Sentence from './components/sentence';
-// import Words from './components/words';
+import Sentence from './sentence';
+// import Words from '/words';
 
 class View extends Component {
   constructor(props) {
