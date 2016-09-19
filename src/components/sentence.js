@@ -8,7 +8,7 @@ class Sentence extends Component {
     super(props)
 
     this.state = {
-      sentence: 'String'
+      sentence: ''
     }
   }
 
@@ -16,11 +16,13 @@ class Sentence extends Component {
   //   //generate words
   // }
 
-  renderSentence(sentence) {
+  renderSentence(e) {
+    e.preventDefault()
+
     console.log('working');
-    axios.get('http://localhost:3000/' + sentence._id).then((response) => {
+    axios.get('http://localhost:3000/sentences/random').then((response) => {
       this.setState ({
-        sentence: response.data
+        sentence: response[0]
       });
     });
     // renderWords()
