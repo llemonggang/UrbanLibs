@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-// import Words from './components/words';
-
 class Sentence extends Component {
   constructor(props) {
     super(props)
@@ -11,10 +9,6 @@ class Sentence extends Component {
       sentence: ''
     }
   }
-
-  // renderWords() {
-  //   //generate words
-  // }
 
   renderSentence(e) {
     e.preventDefault()
@@ -25,7 +19,6 @@ class Sentence extends Component {
         sentence: response[0]
       });
     });
-    // renderWords()
   }
 
 
