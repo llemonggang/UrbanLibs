@@ -12,12 +12,11 @@ class Sentence extends Component {
 
   renderSentence(e) {
     e.preventDefault()
-
-    console.log('working');
     axios.get('http://localhost:3000/sentences/random').then((response) => {
       this.setState ({
         sentence: response[0]
       });
+      console.log(this.state.sentence);
     });
   }
 
@@ -26,7 +25,7 @@ class Sentence extends Component {
 
     return(
       <div>
-        <button onClick={this.renderSentence}>Generate Sentence</button>
+        <button onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
       </div>
   )
 
