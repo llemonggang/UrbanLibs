@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class Words extends Component {
@@ -6,15 +7,19 @@ class Words extends Component {
     super(props)
 
     this.state = {
-      noun: 'string',
-      adjective: 'string',
-      verb: 'string'
+      word: '',
+      type: ''
     }
   }
 
   renderWords(e) {
     e.preventDefault()
-    console.log('working');
+    axios.get('http://localhost:3000/words/random').then((response) => { this.setState ({
+       word: response,
+       type: response
+     });
+   });
+    console.log(this.state.type.data);
   }
 
   render () {
