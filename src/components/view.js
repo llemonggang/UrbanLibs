@@ -13,7 +13,10 @@ class View extends Component {
 
     return(
       <div>
-      <Sentence />
+        <header>Urban<span>Libs</span></header>
+        <div className="container">
+        <Sentence />
+        </div>
       </div>
   )
 
