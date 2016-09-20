@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Words from './words';
+
 class Sentence extends Component {
   constructor(props) {
     super(props)
@@ -12,22 +14,20 @@ class Sentence extends Component {
 
   renderSentence(e) {
     e.preventDefault()
-    axios.get('http://localhost:3000/sentences/random').then((response) => {
-      this.setState ({
-        sentence: response
+     axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
+        sentence: response.data[0].sentence
       });
-      console.log(this.state.sentence.data[0].sentence);
     });
   }
 
   render () {
-
     return(
       <div>
-        <button onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
+        <div>{this.state.sentence}</div>
+        <button className="buttons" onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
+        <Words />
       </div>
-  )
-
+    )
   }
 
 }
