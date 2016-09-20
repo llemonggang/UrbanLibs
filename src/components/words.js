@@ -11,6 +11,7 @@ class Words extends Component {
       word: '',
       type: ''
     }
+
   }
 
   renderWords(e) {
@@ -22,17 +23,16 @@ class Words extends Component {
    });
     console.log(this.state.type);
     console.log(this.state.word);
-    console.log(this.props.sentence);
-    (this.props.sentence).replaceString('NOUN', "working")
+
+    console.log(this.props.children);
+    // (this.props.sentence).replaceString('NOUN', "working")
   }
 
-  // addWord(e) {
-  //   e.preventDefault()
-  // }
 
   render () {
     return(
       <div>
+        <Sentence {...this.props}/>
         <button className="buttons" className="button-two" onClick={this.renderWords.bind(this)}>Generate Words</button>
       </div>
     )

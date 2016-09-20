@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Sentence from './sentence';
+import Words from './words';
 
 class View extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class View extends Component {
       <div>
         <header>Urban<span>Libs</span></header>
         <div className="container">
-        <Sentence />
+        <Words />
         </div>
       </div>
   )
