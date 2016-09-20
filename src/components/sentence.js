@@ -12,22 +12,19 @@ class Sentence extends Component {
 
   renderSentence(e) {
     e.preventDefault()
-    axios.get('http://localhost:3000/sentences/random').then((response) => {
-      this.setState ({
-        sentence: response
+     axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
+        sentence: response.data[0].sentence
       });
-      console.log(this.state.sentence.data[0].sentence);
     });
   }
 
   render () {
-
     return(
       <div>
         <button onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
+          <div>{this.state.sentence}</div>
       </div>
-  )
-
+    )
   }
 
 }

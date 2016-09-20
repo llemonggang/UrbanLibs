@@ -13,7 +13,12 @@ class Words extends Component {
   }
 
   render () {
-
+    return(
+      <div>
+        <button onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
+          <div>{this.state.sentence}</div>
+      </div>
+    )
   }
 
 }
