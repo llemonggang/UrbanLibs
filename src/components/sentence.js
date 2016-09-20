@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Words from './words';
+
 class Sentence extends Component {
   constructor(props) {
     super(props)
@@ -21,8 +23,9 @@ class Sentence extends Component {
   render () {
     return(
       <div>
-        <button onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
-          <div>{this.state.sentence}</div>
+        <div>{this.state.sentence}</div>
+        <button className="buttons" onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
+        <Words />
       </div>
     )
   }

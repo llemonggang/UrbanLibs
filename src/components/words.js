@@ -12,11 +12,15 @@ class Words extends Component {
     }
   }
 
+  renderWords(e) {
+    e.preventDefault()
+    console.log('working');
+  }
+
   render () {
     return(
       <div>
-        <button onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
-          <div>{this.state.sentence}</div>
+        <button className="buttons" onClick={this.renderWords.bind(this)}>Generate Words</button>
       </div>
     )
   }
