@@ -1,5 +1,52 @@
-body {
+/*body {
+  background-color: #E8FF1A;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Modak', cursive;
+  font-size: 70px;
+  color: #2AB0DD;
 }
+
+.container {
+  margin: 15px 200px;
+}
+
+.buttons {
+  display: inline-block;
+}
+
+.button-one {
+  display: inline-block;
+  position: absolute;
+  top: 95%;
+  left: 40%;
+  margin: -70px 0 0 -170px;
+  background-color: #FFA61A;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: #FFA61A;
+  color: #08254C;
+}
+
+.button-two {
+  display: inline-block;
+  position: absolute;
+  top: 95%;
+  left:70%;
+  margin: -70px 0 0 -170px;
+  background-color: #FFA61A;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: #FFA61A;
+  color: #08254C;
+}
+
+header {
+  color: #1A7EFF;
+  font-size: 100px;
+  margin: 10px 0px 0px 20px;
+}
+
+span {
+  color: #08254C;
+}*/

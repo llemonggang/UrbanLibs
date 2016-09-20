@@ -20,11 +20,12 @@ class Sentence extends Component {
     });
   }
 
+
   render () {
     return(
       <div>
         <div>{this.state.sentence}</div>
-        <button className="buttons" onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
+        <button className="buttons" className="button-one" onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
         <Words />
       </div>
     )
