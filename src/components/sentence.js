@@ -14,12 +14,11 @@ class Sentence extends Component {
     e.preventDefault()
     axios.get('http://localhost:3000/sentences/random').then((response) => {
       this.setState ({
-        sentence: response[0]
+        sentence: response
       });
-      console.log(this.state.sentence);
+      console.log(this.state.sentence.data[0].sentence);
     });
   }
-
 
   render () {
 
