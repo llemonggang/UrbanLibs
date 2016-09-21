@@ -22,18 +22,16 @@ class Sentence extends Component {
     }
 
     updateSentence() {
+      this.loopSentence()
       if ((this.state.type) === ('adjective')) {
         var adj = this.state.word
         var newSentence = (this.state.sentence).replace('ADJECTIVE', adj)
-        console.log(adj);
       } else if ((this.state.type) === ('verb')){
         var verb = this.state.word
         var newSentence = (this.state.sentence).replace('VERB', verb)
-        console.log(verb);
       } else {
         var noun = this.state.word
         var newSentence = (this.state.sentence).replace('NOUN', noun)
-        console.log(noun);
       }
 
       this.setState ({
@@ -41,6 +39,23 @@ class Sentence extends Component {
       });
 
     }
+
+    loopSentence() {
+      var sentence = (this.state.sentence).split(" ")
+      console.log(sentence);
+
+      for (var i = 0; i < sentence.length; i++) {
+        if (sentence[i].match('NOUN')) {
+          console.log(sentence[i]);
+        } else if (sentence[i].match('VERB')) {
+          console.log(sentence[i]);
+        } else {
+          console.log(sentence[i]);
+        }
+      }
+    }
+
+
 
     renderWords(e) {
       e.preventDefault()
