@@ -4,11 +4,6 @@ import './App.css';
 import Sentence from './components/sentence';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-
-  }
-
   render() {
 
     return (
