@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import View from './components/view';
+import Sentence from './components/sentence';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-
-  }
-
   render() {
 
     return (
       <div>
-      <View />
+      <Sentence />
       </div>
     );
   }
