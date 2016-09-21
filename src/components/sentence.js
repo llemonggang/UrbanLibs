@@ -21,22 +21,25 @@ class Sentence extends Component {
       });
     }
 
-
-
     updateSentence() {
-
       if ((this.state.type) === ('adjective')) {
-        var newSentence = (this.state.sentence).replace('ADJECTIVE', this.state.word)
+        var adj = this.state.word
+        var newSentence = (this.state.sentence).replace('ADJECTIVE', adj)
+        console.log(adj);
       } else if ((this.state.type) === ('verb')){
-        var newSentence = (this.state.sentence).replace('VERB', this.state.word)
+        var verb = this.state.word
+        var newSentence = (this.state.sentence).replace('VERB', verb)
+        console.log(verb);
       } else {
-        var newSentence = (this.state.sentence).replace(('NOUN', this.state.word)
-      } return newSentence;
+        var noun = this.state.word
+        var newSentence = (this.state.sentence).replace('NOUN', noun)
+        console.log(noun);
+      }
 
       this.setState ({
         sentence: newSentence
       });
-      console.log(this.state.sentence);
+
     }
 
     renderWords(e) {
@@ -46,10 +49,7 @@ class Sentence extends Component {
          type: response.data[0].type
        });
        this.updateSentence()
-      //  this.findType()
      });
-      console.log(this.state.type);
-      console.log(this.state.word);
     }
 
 
