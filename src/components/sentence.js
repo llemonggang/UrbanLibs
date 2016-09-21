@@ -21,41 +21,52 @@ class Sentence extends Component {
       });
     }
 
-    updateSentence() {
-      this.loopSentence()
-      if ((this.state.type) === ('adjective')) {
-        var adj = this.state.word
-        var newSentence = (this.state.sentence).replace('ADJECTIVE', adj)
-      } else if ((this.state.type) === ('verb')){
-        var verb = this.state.word
-        var newSentence = (this.state.sentence).replace('VERB', verb)
-      } else {
-        var noun = this.state.word
-        var newSentence = (this.state.sentence).replace('NOUN', noun)
-      }
-
-      this.setState ({
-        sentence: newSentence
-      });
-
-    }
-
     loopSentence() {
       var sentence = (this.state.sentence).split(" ")
-      console.log(sentence);
 
       for (var i = 0; i < sentence.length; i++) {
-        if (sentence[i].match('NOUN')) {
-          console.log(sentence[i]);
-        } else if (sentence[i].match('VERB')) {
-          console.log(sentence[i]);
-        } else {
-          console.log(sentence[i]);
+        if ((sentence[i].match('NOUN'))&&(this.state.type) === ('noun')){
+          var sentence = (sentence).join(" ")
+          var noun = this.state.word
+          var newSentence = (this.state.sentence).replace('NOUN', noun);
         }
+        else if ((sentence[i].match('VERB'))&&(this.state.type) === ('verb')){
+          var sentence = (sentence).join(" ")
+          var verb = this.state.word
+          var newSentence = (this.state.sentence).replace('VERB', verb)
+        }
+        else if ((sentence[i].match('ADJECTIVE'))&&(this.state.type) === ('adjective')) {
+          var sentence = (sentence).join(" ")
+          var adj = this.state.word
+          var newSentence = (this.state.sentence).replace('ADJECTIVE', adj)
+        }
+
+        this.setState ({
+          sentence: newSentence
+        });
+
       }
+
     }
-
-
+    //
+    // updateSentence() {
+    //
+    //     if ((this.state.type) === ('adjective')) {
+    //       var adj = this.state.word
+    //       var newSentence = (this.state.sentence).replace('ADJECTIVE', adj)
+    //     } else if ((this.state.type) === ('verb')){
+    //       var verb = this.state.word
+    //       var newSentence = (this.state.sentence).replace('VERB', verb)
+    //     } else {
+    //       var noun = this.state.word
+    //       var newSentence = (this.state.sentence).replace('NOUN', noun)
+    //     }
+    //
+    //     this.setState ({
+    //       sentence: newSentence
+    //     });
+    //
+    // }
 
     renderWords(e) {
       e.preventDefault()
@@ -63,11 +74,9 @@ class Sentence extends Component {
          word: response.data[0].word,
          type: response.data[0].type
        });
-       this.updateSentence()
+       this.loopSentence()
      });
     }
-
-
 
   render () {
 
