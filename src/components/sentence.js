@@ -9,7 +9,10 @@ class Sentence extends Component {
       sentence: '',
       adjective: '',
       noun: '',
-      verb: ''
+      verb: '',
+      adjectiveDefinition: '',
+      nounDefinition: '',
+      verbDefinition: ''
     }
 
   }
@@ -36,14 +39,30 @@ class Sentence extends Component {
 
     renderWords(e) {
       e.preventDefault()
-      axios.get('http://localhost:3000/words/random').then((response) => { this.setState ({
-         adjective: response.data.adjective[0].word,
-         noun: response.data.noun[0].word,
-         verb: response.data.verb[0].word
-       });
-       console.log(response.data.verb[0].word);
-       this.loopSentence()
-     });
+      axios.get('http://localhost:3000/words/random').then((response) => {
+        axios.get('http://api.urbandictionary.com/v0/define?term='+ response.data.adjective[0].word).then((adjectiveDefinition) => {
+          axios.get('http://api.urbandictionary.com/v0/define?term='+
+          response.data.noun[0].word).then((nounDefinition) => {
+            axios.get('http://api.urbandictionary.com/v0/define?term='+ response.data.verb[0].word).then((verbDefinition) => {
+              this.setState ({
+                adjective: response.data.adjective[0].word,
+                noun: response.data.noun[0].word,
+                verb: response.data.verb[0].word,
+                adjectiveDefinition: adjectiveDefinition.data,
+                nounDefinition: nounDefinition.data,
+                verbDefinition: verbDefinition.data
+              });
+              console.log(response.data.adjective[0].word);
+              console.log(response.data.noun[0].word);
+              console.log(response.data.verb[0].word);
+              console.log(adjectiveDefinition.data.list[0].definition);
+              console.log(nounDefinition.data.list[0].definition);
+              console.log(verbDefinition.data.list[0].definition);
+              this.loopSentence()
+            });
+          });
+        });
+      });
     }
 
   render () {
