@@ -7,8 +7,12 @@ class Sentence extends Component {
 
     this.state = {
       sentence: '',
-      word: '',
-      type: ''
+      wordAdjective: '',
+      wordNoun: '',
+      wordVerb: ''
+      // adjective: '',
+      // noun: '',
+      // verb: ''
     }
 
   }
@@ -21,54 +25,29 @@ class Sentence extends Component {
       });
     }
 
-
     loopSentence() {
-      var sentence = (this.state.sentence).split(" ")
-      for (var i = 0; i < sentence.length; i++) {
-        if ((sentence[i].match('VERB'))&&(this.state.type) === ('verb')){
-        var sentence = (sentence).join(" ")
-        var verb = this.state.word
-        var newSentence = (sentence).replace('VERB', verb)
-        console.log(verb);
+        var verb = this.state.wordVerb
+        var noun = this.state.wordNoun
+        var adj = this.state.wordAdjective
+        var oneSentence = (this.state.sentence).replace('VERB', verb);
+        var twoSentence = (oneSentence).replace('NOUN', noun);
+        var newSentence = (twoSentence).replace('ADJECTIVE', adj);
         this.setState ({
           sentence: newSentence
         });
-        }
-      }
-      var sentence = (this.state.sentence).split(" ")
-      for (var i = 0; i < sentence.length; i++) {
-        if ((sentence[i].match('NOUN'))&&(this.state.type) === ('noun')){
-          var sentence = (sentence).join(" ")
-          var noun = this.state.word
-          var newSentence = (sentence).replace('NOUN', noun);
-          console.log(noun);
-          this.setState ({
-            sentence: newSentence
-          });
-        }
-      }
-      var sentence = (this.state.sentence).split(" ")
-      for (var i = 0; i < sentence.length; i++) {
-        if ((sentence[i].match('ADJECTIVE'))&&(this.state.type) === ('adjective')) {
-        var sentence = (sentence).join(" ")
-        var adj = this.state.word
-        var newSentence = (sentence).replace('ADJECTIVE', adj)
-        console.log(adj);
-        this.setState ({
-          sentence: newSentence
-        });
-        }
-      }
     }
 
     renderWords(e) {
       e.preventDefault()
       axios.get('http://localhost:3000/words/random').then((response) => { this.setState ({
-         word: response.data[0].word,
-         type: response.data[0].type
+         wordAdjective: response.data.adjective[0].word,
+         wordNoun: response.data.noun[0].word,
+         wordVerb: response.data.verb[0].word
+        //  noun: response.data.noun[0].type,
+        //  verb: response.data.verb[0].type,
+        //  adjective: response.data.adjective[0].type
        });
-      //  this.searchAdjective()
-      //  this.searchNoun()
+       console.log(response.data.verb[0].word);
        this.loopSentence()
      });
     }
