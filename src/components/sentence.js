@@ -21,52 +21,45 @@ class Sentence extends Component {
       });
     }
 
+
     loopSentence() {
       var sentence = (this.state.sentence).split(" ")
-
+      for (var i = 0; i < sentence.length; i++) {
+        if ((sentence[i].match('VERB'))&&(this.state.type) === ('verb')){
+        var sentence = (sentence).join(" ")
+        var verb = this.state.word
+        var newSentence = (sentence).replace('VERB', verb)
+        console.log(verb);
+        this.setState ({
+          sentence: newSentence
+        });
+        }
+      }
+      var sentence = (this.state.sentence).split(" ")
       for (var i = 0; i < sentence.length; i++) {
         if ((sentence[i].match('NOUN'))&&(this.state.type) === ('noun')){
           var sentence = (sentence).join(" ")
           var noun = this.state.word
-          var newSentence = (this.state.sentence).replace('NOUN', noun);
+          var newSentence = (sentence).replace('NOUN', noun);
+          console.log(noun);
+          this.setState ({
+            sentence: newSentence
+          });
         }
-        else if ((sentence[i].match('VERB'))&&(this.state.type) === ('verb')){
-          var sentence = (sentence).join(" ")
-          var verb = this.state.word
-          var newSentence = (this.state.sentence).replace('VERB', verb)
-        }
-        else if ((sentence[i].match('ADJECTIVE'))&&(this.state.type) === ('adjective')) {
-          var sentence = (sentence).join(" ")
-          var adj = this.state.word
-          var newSentence = (this.state.sentence).replace('ADJECTIVE', adj)
-        }
-
+      }
+      var sentence = (this.state.sentence).split(" ")
+      for (var i = 0; i < sentence.length; i++) {
+        if ((sentence[i].match('ADJECTIVE'))&&(this.state.type) === ('adjective')) {
+        var sentence = (sentence).join(" ")
+        var adj = this.state.word
+        var newSentence = (sentence).replace('ADJECTIVE', adj)
+        console.log(adj);
         this.setState ({
           sentence: newSentence
         });
-
+        }
       }
-
     }
-    //
-    // updateSentence() {
-    //
-    //     if ((this.state.type) === ('adjective')) {
-    //       var adj = this.state.word
-    //       var newSentence = (this.state.sentence).replace('ADJECTIVE', adj)
-    //     } else if ((this.state.type) === ('verb')){
-    //       var verb = this.state.word
-    //       var newSentence = (this.state.sentence).replace('VERB', verb)
-    //     } else {
-    //       var noun = this.state.word
-    //       var newSentence = (this.state.sentence).replace('NOUN', noun)
-    //     }
-    //
-    //     this.setState ({
-    //       sentence: newSentence
-    //     });
-    //
-    // }
 
     renderWords(e) {
       e.preventDefault()
@@ -74,6 +67,8 @@ class Sentence extends Component {
          word: response.data[0].word,
          type: response.data[0].type
        });
+      //  this.searchAdjective()
+      //  this.searchNoun()
        this.loopSentence()
      });
     }
