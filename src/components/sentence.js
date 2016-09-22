@@ -7,12 +7,9 @@ class Sentence extends Component {
 
     this.state = {
       sentence: '',
-      wordAdjective: '',
-      wordNoun: '',
-      wordVerb: ''
-      // adjective: '',
-      // noun: '',
-      // verb: ''
+      adjective: '',
+      noun: '',
+      verb: ''
     }
 
   }
@@ -26,9 +23,9 @@ class Sentence extends Component {
     }
 
     loopSentence() {
-        var verb = this.state.wordVerb
-        var noun = this.state.wordNoun
-        var adj = this.state.wordAdjective
+        var verb = this.state.verb
+        var noun = this.state.noun
+        var adj = this.state.adjective
         var oneSentence = (this.state.sentence).replace('VERB', verb);
         var twoSentence = (oneSentence).replace('NOUN', noun);
         var newSentence = (twoSentence).replace('ADJECTIVE', adj);
@@ -40,12 +37,9 @@ class Sentence extends Component {
     renderWords(e) {
       e.preventDefault()
       axios.get('http://localhost:3000/words/random').then((response) => { this.setState ({
-         wordAdjective: response.data.adjective[0].word,
-         wordNoun: response.data.noun[0].word,
-         wordVerb: response.data.verb[0].word
-        //  noun: response.data.noun[0].type,
-        //  verb: response.data.verb[0].type,
-        //  adjective: response.data.adjective[0].type
+         adjective: response.data.adjective[0].word,
+         noun: response.data.noun[0].word,
+         verb: response.data.verb[0].word
        });
        console.log(response.data.verb[0].word);
        this.loopSentence()
@@ -60,11 +54,11 @@ class Sentence extends Component {
 
         <div className="sentence">
           <div>{this.state.sentence}</div>
-          <button className="buttons" className="button-one" onClick={this.renderSentence.bind(this)}>Generate Sentence</button>
+          <button className="buttons" className="button-one" onClick={this.renderSentence.bind(this)}>sentence!</button>
         </div>
 
         <div className="word">
-          <button className="buttons" className="button-two" onClick={this.renderWords.bind(this)}>Generate Words</button>
+          <button className="buttons" className="button-two" onClick={this.renderWords.bind(this)}>words!</button>
         </div>
 
         <div className="window">
