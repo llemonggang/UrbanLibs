@@ -17,6 +17,17 @@ class Sentence extends Component {
 
   }
 
+    useCases() {
+      var sentence = (this.state.sentence).split(" ");
+
+      for (var i = 0; i < sentence.length; i++) {
+       if (sentence[i].match('NOUN')){
+        //  .show(nounDefinition)
+        }
+       }
+
+    }
+
     renderSentence(e) {
       e.preventDefault()
        axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
@@ -48,17 +59,12 @@ class Sentence extends Component {
                 adjective: response.data.adjective[0].word,
                 noun: response.data.noun[0].word,
                 verb: response.data.verb[0].word,
-                adjectiveDefinition: adjectiveDefinition.data,
-                nounDefinition: nounDefinition.data,
-                verbDefinition: verbDefinition.data
+                adjectiveDefinition: adjectiveDefinition.data.list[0].definition,
+                nounDefinition: nounDefinition.data.list[0].definition,
+                verbDefinition: verbDefinition.data.list[0].definition
               });
-              console.log(response.data.adjective[0].word);
-              console.log(response.data.noun[0].word);
-              console.log(response.data.verb[0].word);
-              console.log(adjectiveDefinition.data.list[0].definition);
-              console.log(nounDefinition.data.list[0].definition);
-              console.log(verbDefinition.data.list[0].definition);
               this.loopSentence()
+              this.useCases()
             });
           });
         });
@@ -68,21 +74,27 @@ class Sentence extends Component {
   render () {
 
     return(
-      <div className="container">
+      <div>
         <header>Urban<span>Libs</span></header>
 
-        <div className="sentence">
-          <div>{this.state.sentence}</div>
-          <button className="buttons" className="button-one" onClick={this.renderSentence.bind(this)}>sentence!</button>
-        </div>
+            <div className="sentence">
+              <div>{this.state.sentence}</div>
+            </div>
 
-        <div className="word">
-          <button className="buttons" className="button-two" onClick={this.renderWords.bind(this)}>words!</button>
-        </div>
+            <div>
+            <button className="buttons" className="button-one" onClick={this.renderSentence.bind(this)}>sentence</button>
 
-        <div className="window">
-          <p>Definition Window</p>
-        </div>
+            <button className="buttons" className="button-two" onClick={this.renderWords.bind(this)}>words</button>
+            </div>
+
+            <div className="window">
+              <ul>
+                <li className="li-defs"><span className="defs">{this.state.verb}</span>{this.state.verbDefinition}</li>
+                <li className="li-defs"><span className="defs">{this.state.noun}</span>{this.state.nounDefinition}</li>
+                <li className="li-defs"><span className="defs">{this.state.adjective}</span>{this.state.adjectiveDefinition}</li>
+              </ul>
+            </div>
+
       </div>
     )
 
