@@ -1,10 +1,10 @@
-/*body {
-  background-color: #E8FF1A;
+body {
+  background-color: #DFEAF9;
   margin: 0;
   padding: 0;
-  font-family: 'Modak', cursive;
+  font-family: 'Muli', sans-serif;
   font-size: 70px;
-  color: #F62ABA;
+  color: #45ACC0;
 }
 
 .container {
@@ -17,7 +17,7 @@
 
 .button-one {
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 95%;
   left: 40%;
   margin: -70px 0 0 -170px;
@@ -30,7 +30,7 @@
 
 .button-two {
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 95%;
   left:70%;
   margin: -70px 0 0 -170px;
@@ -42,16 +42,19 @@
 }
 
 header {
-  color: #1A7EFF;
+  color: #E68412;
   font-size: 100px;
   margin: 10px 0px 0px 20px;
 }
 
 span {
-  color: #08254C;
+  color: #D1ECA1;
 }
 
 .window {
-  border-width: thin;
-  background-color: #F62ABA;
-}*/
+  display: none;
+}
+
+.words {
+  font-family: 'Indie Flower', cursive;
+}
