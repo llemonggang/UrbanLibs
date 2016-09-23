@@ -51,8 +51,9 @@ class Sentence extends Component {
         var oneSentence = (this.state.sentence).replace('VERB', verb);
         var twoSentence = (oneSentence).replace('NOUN', noun);
         var newSentence = (twoSentence).replace('ADJECTIVE', adj);
+        var capitalizedSentence = (newSentence).charAt(0).toUpperCase() + newSentence.slice(1);
         this.setState ({
-          sentence: newSentence
+          sentence: capitalizedSentence
         });
     }
 
