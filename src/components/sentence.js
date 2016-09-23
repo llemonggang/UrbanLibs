@@ -60,10 +60,10 @@ class Sentence extends Component {
     renderWords(e) {
       e.preventDefault()
       axios.get('https://urbanlibs.herokuapp.com/words/random').then((response) => {
-        axios.get('https://urbanlibs.herokuapp.com/words/define/'+ response.data.adjective[0].word).then((adjectiveDefinition) => {
-          axios.get('https://urbanlibs.herokuapp.com/words/define/'+
-          response.data.noun[0].word).then((nounDefinition) => {
-            axios.get('https://urbanlibs.herokuapp.com/words/define/'+ response.data.verb[0].word).then((verbDefinition) => {
+        axios.get('https://urbanlibs.herokuapp.com/words/define?word='+ encodeURIComponent(response.data.adjective[0].word)).then((adjectiveDefinition) => {
+          axios.get('https://urbanlibs.herokuapp.com/words/define?word='+
+          encodeURIComponent(response.data.noun[0].word)).then((nounDefinition) => {
+            axios.get('https://urbanlibs.herokuapp.com/words/define?word='+ encodeURIComponent(response.data.verb[0].word)).then((verbDefinition) => {
               this.setState ({
                 adjective: response.data.adjective[0].word,
                 noun: response.data.noun[0].word,
