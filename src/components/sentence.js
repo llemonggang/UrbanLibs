@@ -130,7 +130,6 @@ class Sentence extends Component {
             <div className="window">
               <ul>
                 {definitions}
-
               </ul>
             </div>
 
