@@ -44,14 +44,6 @@ class Sentence extends Component {
 
     }
 
-    renderSentence(e) {
-      e.preventDefault()
-       axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
-          sentence: response.data[0].sentence
-        });
-      });
-    }
-
     loopSentence() {
         var verb = this.state.verb
         var noun = this.state.noun
@@ -88,11 +80,20 @@ class Sentence extends Component {
       });
     }
 
+    renderSentence(e) {
+      e.preventDefault()
+       axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
+          sentence: response.data[0].sentence
+        });
+      });
+      this.setState ({
+        definitionTypes: []
+      })
+    }
+
   render () {
     let definitions = this.state.definitionTypes.map((definition) => {
-      // definition = adjectiveDefinition
-      // definition = nounDefinition
-      // definition = verbDefinition
+
       let word = '';
 
       if (definition === 'adjectiveDefinition') {
