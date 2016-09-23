@@ -7,8 +7,8 @@ body {
 
 .sentence {
   margin: 10px 50px 10px 50px;
-  width: 900px;
-  max-width: 900px;
+  width: 100%;
+  max-width: 100%;
   height: 300px;
   max-height: 300px;
   display: inline-block;
@@ -17,8 +17,8 @@ body {
 .window {
   font-size: 20px;
   padding: 10px;
-  width: 900px;
-  max-width: 900px;
+  width: 100%;
+  max-width: 100%;
   height: 300px;
   max-height: 300px;
   display: inline-block;
