@@ -44,14 +44,6 @@ class Sentence extends Component {
 
     }
 
-    renderSentence(e) {
-      e.preventDefault()
-       axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
-          sentence: response.data[0].sentence
-        });
-      });
-    }
-
     loopSentence() {
         var verb = this.state.verb
         var noun = this.state.noun
@@ -59,8 +51,9 @@ class Sentence extends Component {
         var oneSentence = (this.state.sentence).replace('VERB', verb);
         var twoSentence = (oneSentence).replace('NOUN', noun);
         var newSentence = (twoSentence).replace('ADJECTIVE', adj);
+        var capitalizedSentence = (newSentence).charAt(0).toUpperCase() + newSentence.slice(1);
         this.setState ({
-          sentence: newSentence
+          sentence: capitalizedSentence
         });
     }
 
@@ -88,11 +81,20 @@ class Sentence extends Component {
       });
     }
 
+    renderSentence(e) {
+      e.preventDefault()
+       axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
+          sentence: response.data[0].sentence
+        });
+      });
+      this.setState ({
+        definitionTypes: []
+      })
+    }
+
   render () {
     let definitions = this.state.definitionTypes.map((definition) => {
-      // definition = adjectiveDefinition
-      // definition = nounDefinition
-      // definition = verbDefinition
+
       let word = '';
 
       if (definition === 'adjectiveDefinition') {
