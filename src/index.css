@@ -95,3 +95,9 @@ span {
 li {
   list-style: none;
 }
+
+.marks {
+  font-size: 30px;
+  font-weight: 400;
+  color: #75830B;
+}

@@ -59,11 +59,11 @@ class Sentence extends Component {
 
     renderWords(e) {
       e.preventDefault()
-      axios.get('http://localhost:3000/words/random').then((response) => {
-        axios.get('http://api.urbandictionary.com/v0/define?term='+ response.data.adjective[0].word).then((adjectiveDefinition) => {
-          axios.get('http://api.urbandictionary.com/v0/define?term='+
-          response.data.noun[0].word).then((nounDefinition) => {
-            axios.get('http://api.urbandictionary.com/v0/define?term='+ response.data.verb[0].word).then((verbDefinition) => {
+      axios.get('https://urbanlibs.herokuapp.com/words/random').then((response) => {
+        axios.get('https://urbanlibs.herokuapp.com/words/define?word='+ encodeURIComponent(response.data.adjective[0].word)).then((adjectiveDefinition) => {
+          axios.get('https://urbanlibs.herokuapp.com/words/define?word='+
+          encodeURIComponent(response.data.noun[0].word)).then((nounDefinition) => {
+            axios.get('https://urbanlibs.herokuapp.com/words/define?word='+ encodeURIComponent(response.data.verb[0].word)).then((verbDefinition) => {
               this.setState ({
                 adjective: response.data.adjective[0].word,
                 noun: response.data.noun[0].word,
@@ -83,7 +83,8 @@ class Sentence extends Component {
 
     renderSentence(e) {
       e.preventDefault()
-       axios.get('http://localhost:3000/sentences/random').then((response) => { this.setState ({
+       axios.get('https://urbanlibs.herokuapp.com/sentences/random').then((response) => {
+        this.setState ({
           sentence: response.data[0].sentence
         });
       });
@@ -119,6 +120,7 @@ class Sentence extends Component {
 
             <div className="sentence">
               <div>{this.state.sentence}</div>
+              <p>The <span className="marks">NOUN</span> <span className="marks">VERB</span> from the sky at night and it was <span className="marks">ADJECTIVE</span>.</p>
             </div>
 
             <div>
@@ -130,7 +132,6 @@ class Sentence extends Component {
             <div className="window">
               <ul>
                 {definitions}
-
               </ul>
             </div>
 

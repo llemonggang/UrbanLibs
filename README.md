@@ -1,3 +1,4 @@
+
 **Project Description**
 This is an entertainment app based on the old childhood game of Mad-libs. The game originally called for a person to give random words, such as adjectives, nouns, or verbs, and those words would be placed into a pre-chosen sentence or story for a humorous result. This app is similar to that game, but the words chosen (adjectives, nouns, or verbs) are selected from Urban Dictionary and placed into a randomly selected sentence.
 
