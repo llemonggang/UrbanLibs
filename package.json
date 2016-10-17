@@ -1,0 +1,22 @@
+{
+  "name": "UrbanLibsFront",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-loader": "^6.2.5",
+    "react-scripts": "0.4.3",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "axios": "^0.14.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-string-replace": "^0.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
