@@ -7,19 +7,29 @@ body {
 
 .sentence {
   margin: 10px 50px 10px 50px;
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+  max-height: 300px;
+  display: inline-block;
 }
 
 .window {
   font-size: 20px;
   padding: 10px;
-}
-
-.buttons {
-
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+  max-height: 300px;
+  display: inline-block;
 }
 
 .button-one {
-  margin: 0px 10px 0px 300px;
+  position: relative;
+  top: 10%;
+  bottom: 10%;
+  left: 30%;
+  right: 10%;
   width: 150px;
   font-size: 20px;
   display: inline-block;
@@ -27,12 +37,16 @@ body {
   border: 2px solid;
   border-radius: 25px;
   border-color: #FFA61A;
-  color: #08254C;
+  color: #445016;
   outline: none;
 }
 
 .button-two {
-  margin: 0px 300px 0px 10px;
+  position: relative;
+  top: 10%;
+  bottom: 10%;
+  left: 40%;
+  right: 10%;
   width: 150px;
   font-size: 20px;
   display: inline-block;
@@ -40,14 +54,18 @@ body {
   border: 2px solid;
   border-radius: 25px;
   border-color: #FFA61A;
-  color: #08254C;
+  color: #445016;
   outline: none;
 }
 
 header {
   color: #E68412;
   font-size: 100px;
-  margin: 15px 250px 0px 250px;
+  position: relative;
+  top: 10%;
+  bottom: 10%;
+  left: 30%;
+  right: 10%;
 }
 
 span {
@@ -56,7 +74,7 @@ span {
 
 .word {
   font-family: 'Indie Flower', cursive;
-  color: tomato;
+  color: #A5B80F;
 }
 
 .defs {
@@ -76,4 +94,10 @@ span {
 
 li {
   list-style: none;
+}
+
+.marks {
+  font-size: 30px;
+  font-weight: 400;
+  color: #75830B;
 }
