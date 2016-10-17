@@ -12,10 +12,37 @@ class Sentence extends Component {
       verb: '',
       adjectiveDefinition: '',
       nounDefinition: '',
-      verbDefinition: ''
+      verbDefinition: '',
+      definitionTypes: []
     }
 
   }
+
+    useCases() {
+      var definitionTypes = [];
+      var sentence = (this.state.sentence).split(" ");
+
+      console.log('sentence', sentence);
+
+      for (var i = 0; i < sentence.length; i++) {
+        if (sentence[i].match('NOUN')){
+          definitionTypes.push('nounDefinition');
+        }
+        if (sentence[i].match('ADJECTIVE')){
+          definitionTypes.push('adjectiveDefinition');
+        }
+        if (sentence[i].match('VERB')){
+          definitionTypes.push('verbDefinition');
+        }
+      }
+
+      console.log('useCases', definitionTypes);
+
+      this.setState({
+        definitionTypes: definitionTypes
+      })
+
+    }
 
     renderSentence(e) {
       e.preventDefault()
@@ -48,17 +75,13 @@ class Sentence extends Component {
                 adjective: response.data.adjective[0].word,
                 noun: response.data.noun[0].word,
                 verb: response.data.verb[0].word,
-                adjectiveDefinition: adjectiveDefinition.data,
-                nounDefinition: nounDefinition.data,
-                verbDefinition: verbDefinition.data
+                adjectiveDefinition: adjectiveDefinition.data.list[0].definition,
+                nounDefinition: nounDefinition.data.list[0].definition,
+                verbDefinition: verbDefinition.data.list[0].definition
               });
-              console.log(response.data.adjective[0].word);
-              console.log(response.data.noun[0].word);
-              console.log(response.data.verb[0].word);
-              console.log(adjectiveDefinition.data.list[0].definition);
-              console.log(nounDefinition.data.list[0].definition);
-              console.log(verbDefinition.data.list[0].definition);
+              this.useCases()
               this.loopSentence()
+
             });
           });
         });
@@ -66,23 +89,49 @@ class Sentence extends Component {
     }
 
   render () {
+    let definitions = this.state.definitionTypes.map((definition) => {
+      // definition = adjectiveDefinition
+      // definition = nounDefinition
+      // definition = verbDefinition
+      let word = '';
 
+      if (definition === 'adjectiveDefinition') {
+        word = this.state.adjective;
+      }
+      if (definition === 'nounDefinition') {
+        word = this.state.noun;
+      }
+      if (definition === 'verbDefinition') {
+        word = this.state.verb;
+      }
+
+      return (
+        <li className="li-defs" key={word}>
+          <span className="defs">{word}</span>{this.state[definition]}
+        </li>
+      )
+    })
     return(
-      <div className="container">
+      <div>
         <header>Urban<span>Libs</span></header>
 
-        <div className="sentence">
-          <div>{this.state.sentence}</div>
-          <button className="buttons" className="button-one" onClick={this.renderSentence.bind(this)}>sentence!</button>
-        </div>
+            <div className="sentence">
+              <div>{this.state.sentence}</div>
+            </div>
 
-        <div className="word">
-          <button className="buttons" className="button-two" onClick={this.renderWords.bind(this)}>words!</button>
-        </div>
+            <div>
+            <button className="buttons" className="button-one" onClick={this.renderSentence.bind(this)}>sentence</button>
 
-        <div className="window">
-          <p>Definition Window</p>
-        </div>
+            <button className="buttons" className="button-two" onClick={this.renderWords.bind(this)}>words</button>
+            </div>
+
+            <div className="window">
+              <ul>
+                {definitions}
+
+              </ul>
+            </div>
+
       </div>
     )
 
