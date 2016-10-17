@@ -83,7 +83,8 @@ class Sentence extends Component {
 
     renderSentence(e) {
       e.preventDefault()
-       axios.get('https://urbanlibs.herokuapp.com/sentences/random').then((response) => { this.setState ({
+       axios.get('https://urbanlibs.herokuapp.com/sentences/random').then((response) => {
+        this.setState ({
           sentence: response.data[0].sentence
         });
       });
@@ -116,6 +117,8 @@ class Sentence extends Component {
     return(
       <div>
         <header>Urban<span>Libs</span></header>
+
+        <p>The <span className="marks">NOUN</span> <span className="marks">VERB</span> from the sky at night and it was <span className="marks">ADJECTIVE</span>.</p>
 
             <div className="sentence">
               <div>{this.state.sentence}</div>
