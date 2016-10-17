@@ -118,10 +118,9 @@ class Sentence extends Component {
       <div>
         <header>Urban<span>Libs</span></header>
 
-        <p>The <span className="marks">NOUN</span> <span className="marks">VERB</span> from the sky at night and it was <span className="marks">ADJECTIVE</span>.</p>
-
             <div className="sentence">
               <div>{this.state.sentence}</div>
+              <p>The <span className="marks">NOUN</span> <span className="marks">VERB</span> from the sky at night and it was <span className="marks">ADJECTIVE</span>.</p>
             </div>
 
             <div>
